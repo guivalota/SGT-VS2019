@@ -33,6 +33,7 @@ namespace SGT_VS2019
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@ namespace SGT_VS2019
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCliente});
+            this.mnuCliente,
+            this.mnuVeiculo});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.clienteToolStripMenuItem.Text = "Cadastro";
@@ -67,6 +69,13 @@ namespace SGT_VS2019
             this.mnuCliente.Size = new System.Drawing.Size(180, 22);
             this.mnuCliente.Text = "Cliente";
             this.mnuCliente.Click += new System.EventHandler(this.mnuCliente_Click);
+            // 
+            // mnuVeiculo
+            // 
+            this.mnuVeiculo.Name = "mnuVeiculo";
+            this.mnuVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuVeiculo.Text = "Veiculo";
+            this.mnuVeiculo.Click += new System.EventHandler(this.mnuVeiculo_Click);
             // 
             // Form1
             // 
@@ -91,6 +100,7 @@ namespace SGT_VS2019
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCliente;
+        private System.Windows.Forms.ToolStripMenuItem mnuVeiculo;
     }
 }
 

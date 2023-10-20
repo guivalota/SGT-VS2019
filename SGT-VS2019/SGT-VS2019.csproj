@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="veiculo\frmVeiculoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="veiculo\frmVeiculoPesquisa.Designer.cs">
+      <DependentUpon>frmVeiculoPesquisa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="cliente\frmClientePesquisa.resx">
       <DependentUpon>frmClientePesquisa.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +89,9 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="veiculo\frmVeiculoPesquisa.resx">
+      <DependentUpon>frmVeiculoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Content\fontawesome\animated.less" />
     <None Include="Content\fontawesome\bordered-pulled.less" />
     <None Include="Content\fontawesome\core.less" />

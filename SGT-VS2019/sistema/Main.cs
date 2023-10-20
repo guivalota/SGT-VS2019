@@ -1,4 +1,5 @@
 ﻿using SGT_VS2019.cliente;
+using SGT_VS2019.veiculo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,12 @@ namespace SGT_VS2019
         private void mnuCliente_Click(object sender, EventArgs e)
         {
             frmClientePesquisa frm = new frmClientePesquisa();
+            frm.ShowDialog();
+        }
+
+        private void mnuVeiculo_Click(object sender, EventArgs e)
+        {
+            frmVeiculoPesquisa frm = new frmVeiculoPesquisa();
             frm.ShowDialog();
         }
     }
