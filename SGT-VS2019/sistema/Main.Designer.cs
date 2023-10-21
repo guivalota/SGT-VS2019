@@ -34,6 +34,9 @@ namespace SGT_VS2019
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVeiculo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFuncionario = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnucontratosCadastrados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +44,8 @@ namespace SGT_VS2019
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
-            this.clienteToolStripMenuItem});
+            this.clienteToolStripMenuItem,
+            this.contratosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -58,7 +62,8 @@ namespace SGT_VS2019
             // 
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCliente,
-            this.mnuVeiculo});
+            this.mnuVeiculo,
+            this.mnuFuncionario});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.clienteToolStripMenuItem.Text = "Cadastro";
@@ -66,16 +71,38 @@ namespace SGT_VS2019
             // mnuCliente
             // 
             this.mnuCliente.Name = "mnuCliente";
-            this.mnuCliente.Size = new System.Drawing.Size(180, 22);
+            this.mnuCliente.Size = new System.Drawing.Size(137, 22);
             this.mnuCliente.Text = "Cliente";
             this.mnuCliente.Click += new System.EventHandler(this.mnuCliente_Click);
             // 
             // mnuVeiculo
             // 
             this.mnuVeiculo.Name = "mnuVeiculo";
-            this.mnuVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuVeiculo.Size = new System.Drawing.Size(137, 22);
             this.mnuVeiculo.Text = "Veiculo";
             this.mnuVeiculo.Click += new System.EventHandler(this.mnuVeiculo_Click);
+            // 
+            // mnuFuncionario
+            // 
+            this.mnuFuncionario.Name = "mnuFuncionario";
+            this.mnuFuncionario.Size = new System.Drawing.Size(137, 22);
+            this.mnuFuncionario.Text = "Funcionário";
+            this.mnuFuncionario.Click += new System.EventHandler(this.mnuFuncionario_Click);
+            // 
+            // contratosToolStripMenuItem
+            // 
+            this.contratosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnucontratosCadastrados});
+            this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
+            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.contratosToolStripMenuItem.Text = "Contratos";
+            // 
+            // mnucontratosCadastrados
+            // 
+            this.mnucontratosCadastrados.Name = "mnucontratosCadastrados";
+            this.mnucontratosCadastrados.Size = new System.Drawing.Size(194, 22);
+            this.mnucontratosCadastrados.Text = "Contratos Cadastrados";
+            this.mnucontratosCadastrados.Click += new System.EventHandler(this.mnucontratosCadastrados_Click);
             // 
             // Form1
             // 
@@ -101,6 +128,9 @@ namespace SGT_VS2019
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCliente;
         private System.Windows.Forms.ToolStripMenuItem mnuVeiculo;
+        private System.Windows.Forms.ToolStripMenuItem mnuFuncionario;
+        private System.Windows.Forms.ToolStripMenuItem contratosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnucontratosCadastrados;
     }
 }
 

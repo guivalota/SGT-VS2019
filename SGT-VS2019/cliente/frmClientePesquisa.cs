@@ -17,14 +17,14 @@ namespace SGT_VS2019.cliente
         {
             InitializeComponent();
             ClienteBLL oBLL = new ClienteBLL();
-            Grid.DataSource = oBLL.PesquisarClientesNomeList("");
+            Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarClientesNomeList(txtNome.Text)).Tables[0];
             label2.Text = Grid.RowCount.ToString();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             ClienteBLL oBLL = new ClienteBLL();
-            Grid.DataSource = oBLL.PesquisarClientesNomeList(txtNome.Text);
+            Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarClientesNomeList(txtNome.Text)).Tables[0];
             label2.Text = Grid.RowCount.ToString();
         }
 
@@ -33,7 +33,8 @@ namespace SGT_VS2019.cliente
             if(e.KeyCode == Keys.Enter)
             {
                 ClienteBLL oBLL = new ClienteBLL();
-                Grid.DataSource = oBLL.PesquisarClientesNomeList(txtNome.Text);
+                
+                Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarClientesNomeList(txtNome.Text)).Tables[0];
                 label2.Text = Grid.RowCount.ToString();
             }
         }

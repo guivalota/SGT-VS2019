@@ -16,8 +16,9 @@ namespace SGT_VS2019.veiculo
         public frmVeiculoPesquisa()
         {
             InitializeComponent();
+
             VeiculoBLL oBLL = new VeiculoBLL();
-            Grid.DataSource = oBLL.PesquisarVeiculosList("");
+            Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarVeiculosList("")).Tables[0];
             label2.Text = Grid.RowCount.ToString();
         }
     }

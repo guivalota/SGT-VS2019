@@ -53,6 +53,18 @@
     <Compile Include="cliente\frmClientePesquisa.Designer.cs">
       <DependentUpon>frmClientePesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="contrato\frmContratosCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contrato\frmContratosCadastrados.Designer.cs">
+      <DependentUpon>frmContratosCadastrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="funcionario\frmFuncionarioPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="funcionario\frmFuncionarioPesquisa.Designer.cs">
+      <DependentUpon>frmFuncionarioPesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="sistema\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <EmbeddedResource Include="cliente\frmClientePesquisa.resx">
       <DependentUpon>frmClientePesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contrato\frmContratosCadastrados.resx">
+      <DependentUpon>frmContratosCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="funcionario\frmFuncionarioPesquisa.resx">
+      <DependentUpon>frmFuncionarioPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

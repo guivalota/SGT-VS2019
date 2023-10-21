@@ -1,12 +1,18 @@
 ﻿using MySqlConnector;
 using System;
+using System.Configuration;
 using System.Data;
 
 namespace DAL
 {
     class GeralDAL
     {
-        public MySqlConnection mConn = new MySqlConnection("Persist Security Info=False;server=paulotur.mysql.uhserver.com;database=paulotur;uid=paulotursp;server=paulotur.mysql.uhserver.com;database=paulotur;uid=paulotursp;pwd={*ojXwjmCCui7");
+
+        static string server = ConfigurationManager.AppSettings["server"];
+        static string database = ConfigurationManager.AppSettings["database"];
+        static string uid = ConfigurationManager.AppSettings["uid"];
+        static string password = ConfigurationManager.AppSettings["password"];
+        public MySqlConnection mConn = new MySqlConnection("Persist Security Info=False;server=" + server + ";database="+ database +";uid=" + uid +";server=" + server +";database="+ database +";uid=" + uid + ";pwd="+ password);
         private void AbrirConexao()
         {
             try
