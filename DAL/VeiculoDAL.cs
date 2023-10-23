@@ -25,11 +25,11 @@ namespace DAL
             return geralDAL.PegarDataSet(sql);
         }
 
-        public List<Veiculo> PesquisarVeiculosList(string campo)
+        public List<Veiculo> PesquisarVeiculosList(string campo, string pesquisa)
         {
             List<Veiculo> retorno = new List<Veiculo>();
             GeralDAL DAL = new GeralDAL();
-            string sql = "SELECT * FROM VEICULO WHERE STATUS = 'Ativo'";
+            string sql = "SELECT * FROM VEICULO";
             try
             {
                 using (var conn = DAL.GetConnection())

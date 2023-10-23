@@ -66,6 +66,16 @@ namespace DAL
                                     cliente.TipoTelefone2 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE2")) ? (string)null : (string)reader["TIPOTELEFONE2"];
                                     cliente.TipoTelefone3 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE3")) ? (string)null : (string)reader["TIPOTELEFONE3"];
                                     cliente.TipoTelefone4 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE4")) ? (string)null : (string)reader["TIPOTELEFONE4"];
+                                    cliente.UF = reader.IsDBNull(reader.GetOrdinal("UF")) ? (string)null : (string)reader["UF"];
+
+                                    if (cliente.Tipo == "F")
+                                    {
+                                        cliente.Tipo = "Fisica";
+                                    }else if(cliente.Tipo == "J")
+                                    {
+                                        cliente.Tipo = "Juridica";
+                                    }
+
                                     retorno.Add(cliente);
                                 }
                             }

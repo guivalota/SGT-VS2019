@@ -43,7 +43,7 @@ namespace DAL
                                 while (reader.Read())
                                 {
                                     Funcionario funcionario = new Funcionario();
-
+                                    DateTime? dtNula = null;
                                     funcionario.Bairro = reader.IsDBNull(reader.GetOrdinal("BAIRRO")) ? (string)null : (string)reader["BAIRRO"];
                                     funcionario.Cargo = reader.IsDBNull(reader.GetOrdinal("CARGO")) ? (string)null : (string)reader["CARGO"];
                                     funcionario.CEP = reader.IsDBNull(reader.GetOrdinal("CEP")) ? (string)null : (string)reader["CEP"];
@@ -51,8 +51,8 @@ namespace DAL
                                     funcionario.Complemento = reader.IsDBNull(reader.GetOrdinal("COMPLEMENTO")) ? (string)null : (string)reader["COMPLEMENTO"];
                                     funcionario.Cpf = reader.IsDBNull(reader.GetOrdinal("CPF")) ? (string)null : (string)reader["CPF"];
                                     funcionario.Ctps = reader.IsDBNull(reader.GetOrdinal("CTPS")) ? (string)null : (string)reader["CTPS"];
-                                    //funcionario.DataNascimento = reader.IsDBNull(reader.GetOrdinal("DATANASCIMENTO")) ? null : (DateTime)reader["DATANASCIMENTO"];
-                                    //funcionario.DataNascimentoConjuge = reader.IsDBNull(reader.GetOrdinal("DATANASCIMENTOCONGUJE")) ? (string)null : (string)reader["DATANASCIMENTOCONGUJE"];
+                                    funcionario.DataNascimento = reader.IsDBNull(reader.GetOrdinal("DATANASCIMENTO")) ? dtNula : (DateTime)reader["DATANASCIMENTO"];
+                                    funcionario.DataNascimentoConjuge = reader.IsDBNull(reader.GetOrdinal("DATANASCIMENTOCONGUJE")) ? dtNula : (DateTime)reader["DATANASCIMENTOCONGUJE"];
                                     funcionario.Email = reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? (string)null : (string)reader["EMAIL"];
                                     funcionario.Endereco = reader.IsDBNull(reader.GetOrdinal("ENDERECO")) ? (string)null : (string)reader["ENDERECO"];
                                     funcionario.Filho = reader.IsDBNull(reader.GetOrdinal("FILHO")) ? (string)null : (string)reader["FILHO"];
@@ -67,7 +67,7 @@ namespace DAL
                                     funcionario.Telefone3 = reader.IsDBNull(reader.GetOrdinal("TELEFONE3")) ? (string)null : (string)reader["TELEFONE3"];
                                     funcionario.Telefone4 = reader.IsDBNull(reader.GetOrdinal("TELEFONE4")) ? (string)null : (string)reader["TELEFONE4"];
                                     funcionario.Uf = reader.IsDBNull(reader.GetOrdinal("UF")) ? (string)null : (string)reader["UF"];
-                                    //funcionario.ValidadeCnh = reader.IsDBNull(reader.GetOrdinal("VALIDADECNH")) ? (string)null : (string)reader["VALIDADECNH"];
+                                    funcionario.ValidadeCnh = reader.IsDBNull(reader.GetOrdinal("VALIDADECNH")) ? dtNula : (DateTime)reader["VALIDADECNH"];
                                     funcionario.status = reader.IsDBNull(reader.GetOrdinal("STATUS")) ? (string)null : (string)reader["STATUS"];
                                     retorno.Add(funcionario);
                                 }

@@ -48,16 +48,17 @@ namespace DAL
                                 while (reader.Read())
                                 {
                                     Contrato contrato = new Contrato();
+                                    DateTime? dtNula = null;
 
                                     contrato.CaminhoArquivo = reader.IsDBNull(reader.GetOrdinal("CAMINHOARQUIVO")) ? (string)null : (string)reader["CAMINHOARQUIVO"];
-                                    contrato.DataContrato = reader.IsDBNull(reader.GetOrdinal("DATACONTRATO")) ? (DateTime)new DateTime(): (DateTime)reader["DATACONTRATO"];
-                                    contrato.DataFinal = reader.IsDBNull(reader.GetOrdinal("DATAFINAL")) ? (DateTime)new DateTime(): (DateTime)reader["DATAFINAL"];
-                                    contrato.DataInicio = reader.IsDBNull(reader.GetOrdinal("DATINICIAL")) ? (DateTime)new DateTime(): (DateTime)reader["DATINICIAL"];
+                                    contrato.DataContrato = reader.IsDBNull(reader.GetOrdinal("DATACONTRATO")) ? dtNula : (DateTime)reader["DATACONTRATO"];
+                                    contrato.DataFinal = reader.IsDBNull(reader.GetOrdinal("DATAFINAL")) ? dtNula: (DateTime)reader["DATAFINAL"];
+                                    contrato.DataInicio = reader.IsDBNull(reader.GetOrdinal("DATINICIAL")) ? dtNula : (DateTime)reader["DATINICIAL"];
                                     contrato.Destino = reader.IsDBNull(reader.GetOrdinal("DESTINO")) ? (string)null : (string)reader["DESTINO"];
                                     contrato.Diarias = reader.IsDBNull(reader.GetOrdinal("DIARIAS")) ? (int)0 : (int)reader["DIARIAS"];
                                     contrato.EstadoCivil = reader.IsDBNull(reader.GetOrdinal("ESTADOCIVIL")) ? (string)null : (string)reader["ESTADOCIVIL"];
-                                    contrato.HorarioFinal = reader.IsDBNull(reader.GetOrdinal("HORARIOFINAL")) ? (DateTime)new DateTime(): (DateTime)reader["HORARIOFINAL"];
-                                    contrato.HorarioInicial = reader.IsDBNull(reader.GetOrdinal("HORARIOINICIAL")) ? (DateTime)new DateTime() : (DateTime)reader["HORARIOINICIAL"];
+                                    contrato.HorarioFinal = reader.IsDBNull(reader.GetOrdinal("HORARIOFINAL")) ? dtNula : (DateTime)reader["HORARIOFINAL"];
+                                    contrato.HorarioInicial = reader.IsDBNull(reader.GetOrdinal("HORARIOINICIAL")) ? dtNula : (DateTime)reader["HORARIOINICIAL"];
                                     contrato.IdContrato = (int)reader["IDCONTRATO"];
                                     contrato.IdGastos = reader.IsDBNull(reader.GetOrdinal("IDGASTOS")) ? (int)0 : (int)reader["IDGASTOS"];
                                     contrato.IdLocatario = reader.IsDBNull(reader.GetOrdinal("IDLOCATARIO")) ? (int)0 : (int)reader["IDLOCATARIO"];
