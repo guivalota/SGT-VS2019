@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SGT_VS2019.cliente
 {
     public partial class frmClientePesquisa : Form
     {
+        private int selectedRow = -1;
         public frmClientePesquisa()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace SGT_VS2019.cliente
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
             finally
             {
@@ -95,6 +97,126 @@ namespace SGT_VS2019.cliente
             Grid.Columns[21].Visible = false;
         }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (selectedRow != -1)
+            {
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    ClienteBLL oBLL = new ClienteBLL();
+                    frmCliente frm = new frmCliente();
+                    frm.clienteSelecionado = oBLL.PesquisarClientesId(int.Parse(Grid.Rows[selectedRow].Cells[0].Value.ToString()));
+                    frm.PreencherCliente();
+                    frm.BloquearCampos(false);
+                    Cursor.Current = Cursors.Default;
+                    frm.ShowDialog();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+                
+            }
+        }
 
+        private void Grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                frmCliente frm = new frmCliente();
+                Cursor.Current = Cursors.Default;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (selectedRow != -1)
+            {
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    ClienteBLL oBLL = new ClienteBLL();
+                    frmCliente frm = new frmCliente();
+                    frm.clienteSelecionado = oBLL.PesquisarClientesId(int.Parse(Grid.Rows[selectedRow].Cells[0].Value.ToString()));
+                    frm.PreencherCliente();
+                    frm.BloquearCampos(true);
+                    Cursor.Current = Cursors.Default;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+
+            }
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            if (selectedRow != -1)
+            {
+                try
+                {
+                    var retorno = MessageBox.Show(this, "Tem certeza que deseja deletar esse Cliente?", "Deletar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if(retorno == DialogResult.Yes)
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        ClienteBLL oBLL = new ClienteBLL();
+                        Cliente clienteDeletar = oBLL.PesquisarClientesId(int.Parse(Grid.Rows[selectedRow].Cells[0].Value.ToString()));
+                        //Deletar Cliente
+                        MessageBox.Show(this, "Cliente Excluido com sucesso!", "Sucesso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

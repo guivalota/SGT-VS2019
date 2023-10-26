@@ -23,6 +23,12 @@ namespace BLL
             return oDAL.PesquisarClientesNome(nome);
         }
 
+        public Cliente PesquisarClientesId(int id)
+        {
+            ClienteDAL oDAL = new ClienteDAL();
+            return oDAL.PesquisarClientesId(id);
+        }
+
         public List<Cliente> PesquisarClientesNomeList(String nome)
         {
             ClienteDAL oDAL = new ClienteDAL();

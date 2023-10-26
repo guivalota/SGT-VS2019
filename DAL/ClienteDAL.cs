@@ -96,6 +96,77 @@ namespace DAL
             return retorno;
         }
 
+        public Cliente PesquisarClientesId(int id)
+        {
+            Cliente retorno = null;
+            GeralDAL DAL = new GeralDAL();
+            string sql = "SELECT * FROM CLIENTE WHERE IDCLIENTE = " + id;
+            try
+            {
+                using (var conn = DAL.GetConnection())
+                {
+                    conn.Open();
+                    var transaction = DAL.GetTransaction(conn);
+                    try
+                    {
+                        using (var command = GeralDAL.GetCommand(sql, conn, transaction))
+                        {
+                            using (var reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    retorno = new Cliente();
+
+                                    retorno.Bairro = reader.IsDBNull(reader.GetOrdinal("BAIRRO")) ? (string)null : (string)reader["BAIRRO"];
+                                    retorno.Cep = reader.IsDBNull(reader.GetOrdinal("CEP")) ? (string)null : (string)reader["CEP"];
+                                    retorno.Cidade = reader.IsDBNull(reader.GetOrdinal("CIDADE")) ? (string)null : (string)reader["CIDADE"];
+                                    retorno.Complemento = reader.IsDBNull(reader.GetOrdinal("COMPLEMENTO")) ? (string)null : (string)reader["COMPLEMENTO"];
+                                    retorno.CPFCNPJ = reader.IsDBNull(reader.GetOrdinal("CPFCNPJ")) ? (string)null : (string)reader["CPFCNPJ"];
+                                    retorno.Email = reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? (string)null : (string)reader["EMAIL"];
+                                    retorno.Endereco = reader.IsDBNull(reader.GetOrdinal("ENDERECO")) ? (string)null : (string)reader["ENDERECO"];
+                                    retorno.Homepage = reader.IsDBNull(reader.GetOrdinal("HOMEPAGE")) ? (string)null : (string)reader["HOMEPAGE"];
+                                    retorno.Idcliente = (int)reader["IDCLIENTE"];
+                                    retorno.ISRG = reader.IsDBNull(reader.GetOrdinal("ISRG")) ? (string)null : (string)reader["ISRG"];
+                                    retorno.Nomefantasia = reader.IsDBNull(reader.GetOrdinal("NOMEFANTASIA")) ? (string)null : (string)reader["NOMEFANTASIA"];
+                                    retorno.Nomerazaosocial = reader.IsDBNull(reader.GetOrdinal("NOMERAZAOSOCIAL")) ? (string)null : (string)reader["NOMERAZAOSOCIAL"];
+                                    retorno.Telefone1 = reader.IsDBNull(reader.GetOrdinal("TELEFONE1")) ? (string)null : (string)reader["TELEFONE1"];
+                                    retorno.Telefone2 = reader.IsDBNull(reader.GetOrdinal("TELEFONE2")) ? (string)null : (string)reader["TELEFONE2"];
+                                    retorno.Telefone3 = reader.IsDBNull(reader.GetOrdinal("TELEFONE3")) ? (string)null : (string)reader["TELEFONE3"];
+                                    retorno.Telefone4 = reader.IsDBNull(reader.GetOrdinal("TELEFONE4")) ? (string)null : (string)reader["TELEFONE4"];
+                                    retorno.Tipo = reader.IsDBNull(reader.GetOrdinal("TIPO")) ? (string)null : (string)reader["TIPO"];
+                                    retorno.TipoTelefone1 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE1")) ? (string)null : (string)reader["TIPOTELEFONE1"];
+                                    retorno.TipoTelefone2 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE2")) ? (string)null : (string)reader["TIPOTELEFONE2"];
+                                    retorno.TipoTelefone3 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE3")) ? (string)null : (string)reader["TIPOTELEFONE3"];
+                                    retorno.TipoTelefone4 = reader.IsDBNull(reader.GetOrdinal("TIPOTELEFONE4")) ? (string)null : (string)reader["TIPOTELEFONE4"];
+                                    retorno.UF = reader.IsDBNull(reader.GetOrdinal("UF")) ? (string)null : (string)reader["UF"];
+
+                                    if (retorno.Tipo == "F")
+                                    {
+                                        retorno.Tipo = "Fisica";
+                                    }
+                                    else if (retorno.Tipo == "J")
+                                    {
+                                        retorno.Tipo = "Juridica";
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return retorno;
+        }
+
         public void InserirCliente(Cliente cliente)
         {
             GeralDAL DAL = new GeralDAL();
