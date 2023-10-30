@@ -22,10 +22,10 @@ namespace BLL
             return oDAL.PesquisarFuncionarioNome(nome);
         }
 
-        public List<Funcionario> PesquisarFuncionarioNomeList(String nome)
+        public List<Funcionario> PesquisarFuncionarioNomeList(String nome, String tipoPesquisa)
         {
             FuncionarioDAL oDAL = new FuncionarioDAL();
-            return oDAL.PesquisarFuncionarioNomeList(nome);
+            return oDAL.PesquisarFuncionarioNomeList(nome, tipoPesquisa);
         }
     }
 }

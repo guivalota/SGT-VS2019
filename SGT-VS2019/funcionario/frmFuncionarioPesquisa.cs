@@ -16,10 +16,44 @@ namespace SGT_VS2019.funcionario
         public frmFuncionarioPesquisa()
         {
             InitializeComponent();
-            FuncionarioBLL BLL = new FuncionarioBLL();
-            var lista = BLL.PesquisarFuncionarioNomeList("");
-            Grid.DataSource = lista;
-            label1.Text = Grid.Rows.Count.ToString();
+
+            Pesquisar();
+
+        }
+
+        public void Pesquisar()
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                FuncionarioBLL oBLL = new FuncionarioBLL();
+
+                string status = "Todos";
+                if (rdbAtivos.Checked)
+                {
+                    status = "Ativo";
+                }else if (rdbInativos.Checked)
+                {
+                    status = "Inativo";
+                }
+
+                Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarFuncionarioNomeList(txtNome.Text, status)).Tables[0];
+                lblQtdRegistros.Text = "Registros: " + Grid.RowCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Pesquisar();
         }
     }
 }

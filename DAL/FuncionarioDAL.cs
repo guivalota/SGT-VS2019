@@ -23,11 +23,15 @@ namespace DAL
             return geralDAL.PegarDataSet(sql);
         }
 
-        public List<Funcionario> PesquisarFuncionarioNomeList(string nome)
+        public List<Funcionario> PesquisarFuncionarioNomeList(string nome, string tipoPesquisa)
         {
             List<Funcionario> retorno = new List<Funcionario>();
             GeralDAL DAL = new GeralDAL();
             string sql = "SELECT * FROM FUNCIONARIO WHERE NOME LIKE '%" + nome + "%'";
+            if (tipoPesquisa.Equals("Ativo") || tipoPesquisa.Equals("Inativo"))
+            {
+                sql += " AND status ='" + tipoPesquisa + "'";
+            }
             try
             {
                 using (var conn = DAL.GetConnection())

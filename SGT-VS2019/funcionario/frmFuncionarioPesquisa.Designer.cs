@@ -29,8 +29,7 @@ namespace SGT_VS2019.funcionario
         /// </summary>
         private void InitializeComponent()
         {
-            this.Grid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblQtdRegistros = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -40,30 +39,23 @@ namespace SGT_VS2019.funcionario
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            this.Grid = new System.Windows.Forms.DataGridView();
+            this.rdbTodos = new System.Windows.Forms.RadioButton();
+            this.rdbAtivos = new System.Windows.Forms.RadioButton();
+            this.rdbInativos = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // Grid
+            // lblQtdRegistros
             // 
-            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(12, 37);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(776, 180);
-            this.Grid.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblQtdRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblQtdRegistros.AutoSize = true;
+            this.lblQtdRegistros.Location = new System.Drawing.Point(12, 226);
+            this.lblQtdRegistros.Name = "lblQtdRegistros";
+            this.lblQtdRegistros.Size = new System.Drawing.Size(35, 13);
+            this.lblQtdRegistros.TabIndex = 1;
+            this.lblQtdRegistros.Text = "label1";
             // 
             // panel1
             // 
@@ -131,6 +123,7 @@ namespace SGT_VS2019.funcionario
             this.btnPesquisar.TabIndex = 9;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtNome
             // 
@@ -149,31 +142,84 @@ namespace SGT_VS2019.funcionario
             this.label2.TabIndex = 7;
             this.label2.Text = "Nome:";
             // 
+            // Grid
+            // 
+            this.Grid.AllowUserToAddRows = false;
+            this.Grid.AllowUserToDeleteRows = false;
+            this.Grid.AllowUserToResizeRows = false;
+            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.Grid.Location = new System.Drawing.Point(12, 47);
+            this.Grid.MultiSelect = false;
+            this.Grid.Name = "Grid";
+            this.Grid.ReadOnly = true;
+            this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid.Size = new System.Drawing.Size(776, 170);
+            this.Grid.TabIndex = 10;
+            // 
+            // rdbTodos
+            // 
+            this.rdbTodos.AutoSize = true;
+            this.rdbTodos.Checked = true;
+            this.rdbTodos.Location = new System.Drawing.Point(499, 7);
+            this.rdbTodos.Name = "rdbTodos";
+            this.rdbTodos.Size = new System.Drawing.Size(55, 17);
+            this.rdbTodos.TabIndex = 11;
+            this.rdbTodos.TabStop = true;
+            this.rdbTodos.Text = "Todos";
+            this.rdbTodos.UseVisualStyleBackColor = true;
+            // 
+            // rdbAtivos
+            // 
+            this.rdbAtivos.AutoSize = true;
+            this.rdbAtivos.Location = new System.Drawing.Point(554, 7);
+            this.rdbAtivos.Name = "rdbAtivos";
+            this.rdbAtivos.Size = new System.Drawing.Size(54, 17);
+            this.rdbAtivos.TabIndex = 12;
+            this.rdbAtivos.TabStop = true;
+            this.rdbAtivos.Text = "Ativos";
+            this.rdbAtivos.UseVisualStyleBackColor = true;
+            // 
+            // rdbInativos
+            // 
+            this.rdbInativos.AutoSize = true;
+            this.rdbInativos.Location = new System.Drawing.Point(605, 7);
+            this.rdbInativos.Name = "rdbInativos";
+            this.rdbInativos.Size = new System.Drawing.Size(62, 17);
+            this.rdbInativos.TabIndex = 13;
+            this.rdbInativos.TabStop = true;
+            this.rdbInativos.Text = "Inativos";
+            this.rdbInativos.UseVisualStyleBackColor = true;
+            // 
             // frmFuncionarioPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 268);
+            this.Controls.Add(this.rdbInativos);
+            this.Controls.Add(this.rdbAtivos);
+            this.Controls.Add(this.rdbTodos);
+            this.Controls.Add(this.Grid);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Grid);
+            this.Controls.Add(this.lblQtdRegistros);
             this.Name = "frmFuncionarioPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionario";
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView Grid;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblQtdRegistros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnDeletar;
@@ -183,5 +229,9 @@ namespace SGT_VS2019.funcionario
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.RadioButton rdbTodos;
+        private System.Windows.Forms.RadioButton rdbAtivos;
+        private System.Windows.Forms.RadioButton rdbInativos;
     }
 }

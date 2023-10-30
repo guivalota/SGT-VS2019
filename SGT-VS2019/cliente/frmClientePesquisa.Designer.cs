@@ -33,7 +33,7 @@ namespace SGT_VS2019.cliente
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblQtdRegistros = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -91,15 +91,15 @@ namespace SGT_VS2019.cliente
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // label2
+            // lblQtdRegistros
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 214);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.lblQtdRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblQtdRegistros.AutoSize = true;
+            this.lblQtdRegistros.Location = new System.Drawing.Point(9, 214);
+            this.lblQtdRegistros.Name = "lblQtdRegistros";
+            this.lblQtdRegistros.Size = new System.Drawing.Size(35, 13);
+            this.lblQtdRegistros.TabIndex = 4;
+            this.lblQtdRegistros.Text = "label2";
             // 
             // panel1
             // 
@@ -170,7 +170,7 @@ namespace SGT_VS2019.cliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 251);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblQtdRegistros);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
@@ -191,7 +191,7 @@ namespace SGT_VS2019.cliente
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblQtdRegistros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnDeletar;

@@ -43,7 +43,7 @@ namespace SGT_VS2019.cliente
 
                 ClienteBLL oBLL = new ClienteBLL();
                 Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarClientesNomeList(txtNome.Text)).Tables[0];
-                label2.Text = "Registros: "+ Grid.RowCount.ToString();
+                lblQtdRegistros.Text = "Registros: "+ Grid.RowCount.ToString();
 
             }
             catch(Exception ex)
