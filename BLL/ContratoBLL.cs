@@ -29,10 +29,16 @@ namespace BLL
             return DAL.PesquisarMotoristas();
         }
 
-        public List<Contrato> PesquisarContratoList(string arg)
+        public DataSet PesquisarClientes()
         {
             ContratoDAL DAL = new ContratoDAL();
-            return DAL.PesquisarContratoList(arg);
+            return DAL.PesquisarClientes();
+        }
+
+        public List<Contrato> PesquisarContratoList(string arg, int id)
+        {
+            ContratoDAL DAL = new ContratoDAL();
+            return DAL.PesquisarContratoList(arg, id);
         }
     }
 }

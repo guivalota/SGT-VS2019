@@ -29,17 +29,27 @@ namespace DAL
         public DataSet PesquisarMotoristas()
         {
             GeralDAL geralDAL = new GeralDAL();
-            string sql = "Select idfuncionario, nome from FUNCIONARIO where status = 'Ativo'";
+            string sql = "Select idfuncionario, nome from FUNCIONARIO where status = 'Ativo' order by nome";
             return geralDAL.PegarDataSet(sql);
         }
 
-        public List<Contrato> PesquisarContratoList(string nome)
+        public DataSet PesquisarClientes()
+        {
+            GeralDAL geralDAL = new GeralDAL();
+            string sql = "Select IDCLIENTE, NOMERAZAOSOCIAL from CLIENTE order by NOMERAZAOSOCIAL";
+            return geralDAL.PegarDataSet(sql);
+        }
+
+        public List<Contrato> PesquisarContratoList(string campo, int id)
         {
             List<Contrato> retorno = new List<Contrato>();
             GeralDAL DAL = new GeralDAL();
             string sql = "select c.*, f.NOME as NOMEMOTORISTA, cli.NOMERAZAOSOCIAL as NOMELOCATARIO FROM CONTRATO c "+
                             "inner join FUNCIONARIO f on(c.IDMOTORISTA = f.IDFUNCIONARIO)" +
                             "inner join CLIENTE cli on(c.IDLOCATARIO = cli.IDCLIENTE)";
+            if (!campo.Equals("")){
+                sql += " WHERE " + campo + " = " + id;
+            }
             try
             {
                 using (var conn = DAL.GetConnection())

@@ -44,5 +44,10 @@ namespace SGT_VS2019
             frmContratosCadastrados frm = new frmContratosCadastrados();
             frm.ShowDialog();
         }
+
+        private void mnuSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

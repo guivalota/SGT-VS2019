@@ -37,6 +37,7 @@ namespace SGT_VS2019
             this.mnuFuncionario = new System.Windows.Forms.ToolStripMenuItem();
             this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnucontratosCadastrados = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,8 @@ namespace SGT_VS2019
             // 
             // arquivoToolStripMenuItem
             // 
+            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSair});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -104,6 +107,13 @@ namespace SGT_VS2019
             this.mnucontratosCadastrados.Text = "Contratos Cadastrados";
             this.mnucontratosCadastrados.Click += new System.EventHandler(this.mnucontratosCadastrados_Click);
             // 
+            // mnuSair
+            // 
+            this.mnuSair.Name = "mnuSair";
+            this.mnuSair.Size = new System.Drawing.Size(180, 22);
+            this.mnuSair.Text = "Sair";
+            this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +141,7 @@ namespace SGT_VS2019
         private System.Windows.Forms.ToolStripMenuItem mnuFuncionario;
         private System.Windows.Forms.ToolStripMenuItem contratosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnucontratosCadastrados;
+        private System.Windows.Forms.ToolStripMenuItem mnuSair;
     }
 }
 
