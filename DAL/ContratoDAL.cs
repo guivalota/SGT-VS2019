@@ -26,6 +26,13 @@ namespace DAL
             return geralDAL.PegarDataSet(sql);
         }
 
+        public DataSet PesquisarMotoristas()
+        {
+            GeralDAL geralDAL = new GeralDAL();
+            string sql = "Select idfuncionario, nome from FUNCIONARIO where status = 'Ativo'";
+            return geralDAL.PegarDataSet(sql);
+        }
+
         public List<Contrato> PesquisarContratoList(string nome)
         {
             List<Contrato> retorno = new List<Contrato>();

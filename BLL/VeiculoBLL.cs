@@ -22,10 +22,10 @@ namespace BLL
             VeiculoDAL oDAL = new VeiculoDAL();
             return oDAL.PesquisarVeiculos(nome);
         }
-        public List<Veiculo> PesquisarVeiculosList(string campo, string pesquisa)
+        public List<Veiculo> PesquisarVeiculosList(string campo, string pesquisa, string status)
         {
             VeiculoDAL oDAL = new VeiculoDAL();
-            return oDAL.PesquisarVeiculosList(campo, pesquisa);
+            return oDAL.PesquisarVeiculosList(campo, pesquisa, status);
         }
     }
 }

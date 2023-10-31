@@ -27,7 +27,19 @@ namespace SGT_VS2019.veiculo
             {
                 Cursor.Current = Cursors.WaitCursor;
                 VeiculoBLL oBLL = new VeiculoBLL();
-                Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarVeiculosList("","")).Tables[0];
+
+                String status = "Todos";
+                String pesquisa = txtPlaca.Text;
+
+                if (rdbAtivos.Checked)
+                {
+                    status = "Ativo";
+                }else if (rdbInativo.Checked)
+                {
+                    status = "Inativo";
+                }
+
+                Grid.DataSource = BLLGeral.ListToDataSet(oBLL.PesquisarVeiculosList("Placa",pesquisa, status)).Tables[0];
                 label2.Text = "Registros: "+ Grid.RowCount.ToString();
             }
             catch(Exception ex)
@@ -74,6 +86,12 @@ namespace SGT_VS2019.veiculo
             Grid.Columns[12].Visible = false;
             Grid.Columns[13].Visible = false;
             Grid.Columns[14].Visible = false;
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Pesquisar();
+            ConfigurarGrid();
         }
     }
 }
