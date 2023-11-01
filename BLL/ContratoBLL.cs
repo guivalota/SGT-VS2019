@@ -34,6 +34,11 @@ namespace BLL
             ContratoDAL DAL = new ContratoDAL();
             return DAL.PesquisarClientes();
         }
+        public DataSet ListarVeiculos()
+        {
+            ContratoDAL DAL = new ContratoDAL();
+            return DAL.ListarVeiculos();
+        }
 
         public List<Contrato> PesquisarContratoList(string arg, int id)
         {

@@ -33,6 +33,13 @@ namespace DAL
             return geralDAL.PegarDataSet(sql);
         }
 
+        public DataSet ListarVeiculos()
+        {
+            GeralDAL geralDAL = new GeralDAL();
+            string sql = "Select idveiculo, placa from VEICULO WHERE status  = 'Ativo'";
+            return geralDAL.PegarDataSet(sql);
+        }
+
         public DataSet PesquisarClientes()
         {
             GeralDAL geralDAL = new GeralDAL();

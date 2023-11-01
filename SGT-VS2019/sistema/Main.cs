@@ -49,5 +49,11 @@ namespace SGT_VS2019
         {
             this.Close();
         }
+
+        private void mnuNovoContrato_Click(object sender, EventArgs e)
+        {
+            frmNovoContrato frm = new frmNovoContrato();
+            frm.ShowDialog();
+        }
     }
 }

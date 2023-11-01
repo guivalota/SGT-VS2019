@@ -31,13 +31,14 @@ namespace SGT_VS2019
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFuncionario = new System.Windows.Forms.ToolStripMenuItem();
             this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnucontratosCadastrados = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNovoContrato = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,13 @@ namespace SGT_VS2019
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // mnuSair
+            // 
+            this.mnuSair.Name = "mnuSair";
+            this.mnuSair.Size = new System.Drawing.Size(93, 22);
+            this.mnuSair.Text = "Sair";
+            this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
             // 
             // clienteToolStripMenuItem
             // 
@@ -95,6 +103,7 @@ namespace SGT_VS2019
             // contratosToolStripMenuItem
             // 
             this.contratosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuNovoContrato,
             this.mnucontratosCadastrados});
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
             this.contratosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
@@ -107,12 +116,12 @@ namespace SGT_VS2019
             this.mnucontratosCadastrados.Text = "Contratos Cadastrados";
             this.mnucontratosCadastrados.Click += new System.EventHandler(this.mnucontratosCadastrados_Click);
             // 
-            // mnuSair
+            // mnuNovoContrato
             // 
-            this.mnuSair.Name = "mnuSair";
-            this.mnuSair.Size = new System.Drawing.Size(180, 22);
-            this.mnuSair.Text = "Sair";
-            this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
+            this.mnuNovoContrato.Name = "mnuNovoContrato";
+            this.mnuNovoContrato.Size = new System.Drawing.Size(194, 22);
+            this.mnuNovoContrato.Text = "Novo Contrato";
+            this.mnuNovoContrato.Click += new System.EventHandler(this.mnuNovoContrato_Click);
             // 
             // Form1
             // 
@@ -142,6 +151,7 @@ namespace SGT_VS2019
         private System.Windows.Forms.ToolStripMenuItem contratosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnucontratosCadastrados;
         private System.Windows.Forms.ToolStripMenuItem mnuSair;
+        private System.Windows.Forms.ToolStripMenuItem mnuNovoContrato;
     }
 }
 

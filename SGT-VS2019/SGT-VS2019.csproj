@@ -65,6 +65,12 @@
     <Compile Include="contrato\frmContratosCadastrados.Designer.cs">
       <DependentUpon>frmContratosCadastrados.cs</DependentUpon>
     </Compile>
+    <Compile Include="contrato\frmNovoContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contrato\frmNovoContrato.Designer.cs">
+      <DependentUpon>frmNovoContrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="funcionario\frmFuncionarioPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="contrato\frmContratosCadastrados.resx">
       <DependentUpon>frmContratosCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contrato\frmNovoContrato.resx">
+      <DependentUpon>frmNovoContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="funcionario\frmFuncionarioPesquisa.resx">
       <DependentUpon>frmFuncionarioPesquisa.cs</DependentUpon>
