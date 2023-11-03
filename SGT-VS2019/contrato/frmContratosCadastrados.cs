@@ -13,6 +13,7 @@ namespace SGT_VS2019.contrato
 {
     public partial class frmContratosCadastrados : Form
     {
+        private int selectedRow = -1;
         public frmContratosCadastrados()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace SGT_VS2019.contrato
                 Cursor.Current = Cursors.WaitCursor;
                 Grid.DataSource = BLLGeral.ListToDataSet(BLL.PesquisarContratoList(campo, id)).Tables[0];
                 lblQtdGrid.Text = Grid.Rows.Count.ToString();
+                ConfigurarGrid();
             }
             catch(Exception ex)
             {
@@ -74,6 +76,40 @@ namespace SGT_VS2019.contrato
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+
+        private void ConfigurarGrid()
+        {
+            Grid.Columns[0].Visible = false;
+            Grid.Columns[1].Visible = true;
+            Grid.Columns[1].HeaderText = "Data";
+            Grid.Columns[1].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            Grid.Columns[1].Width = 80;
+            Grid.Columns[2].Visible = true;
+            Grid.Columns[2].HeaderText = "Cliente";
+            Grid.Columns[2].Width = 250;
+            Grid.Columns[3].Visible = true;
+            Grid.Columns[3].HeaderText = "Destino";
+            Grid.Columns[3].Width = 250;
+            Grid.Columns[4].Visible = true;
+            Grid.Columns[4].HeaderText = "Motorista";
+            Grid.Columns[4].Width = 250;
+            Grid.Columns[5].Visible = true;
+            Grid.Columns[5].HeaderText = "Veiculo";
+            Grid.Columns[5].Width = 75;
+            Grid.Columns[6].Visible = false;
+            Grid.Columns[7].Visible = false;
+            Grid.Columns[8].Visible = false;
+            Grid.Columns[9].Visible = false;
+            Grid.Columns[10].Visible = false;
+            Grid.Columns[11].Visible = false;
+            Grid.Columns[12].Visible = false;
+            Grid.Columns[13].Visible = false;
+            Grid.Columns[14].Visible = false;
+            Grid.Columns[15].Visible = false;
+            Grid.Columns[16].Visible = false;
+            Grid.Columns[17].Visible = false;
+            Grid.Columns[18].Visible = false;
         }
 
         private void rdbTodos_CheckedChanged(object sender, EventArgs e)
@@ -106,6 +142,58 @@ namespace SGT_VS2019.contrato
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Pesquisar();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                frmNovoContrato frm = new frmNovoContrato();
+                frm.ShowDialog();
+                Pesquisar();
+                selectedRow = -1;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void Grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }

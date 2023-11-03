@@ -31,14 +31,20 @@ namespace SGT_VS2019
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorioCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorioVeiculo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorioMotorista = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorioOleoDiesel = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorioPedagio = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFuncionario = new System.Windows.Forms.ToolStripMenuItem();
             this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnucontratosCadastrados = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNovoContrato = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnucontratosCadastrados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +63,59 @@ namespace SGT_VS2019
             // arquivoToolStripMenuItem
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatóriosToolStripMenuItem,
             this.mnuSair});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRelatorioCliente,
+            this.mnuRelatorioVeiculo,
+            this.mnuRelatorioMotorista,
+            this.mnuRelatorioOleoDiesel,
+            this.mnuRelatorioPedagio});
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // mnuRelatorioCliente
+            // 
+            this.mnuRelatorioCliente.Name = "mnuRelatorioCliente";
+            this.mnuRelatorioCliente.Size = new System.Drawing.Size(180, 22);
+            this.mnuRelatorioCliente.Text = "Clientes";
+            this.mnuRelatorioCliente.Click += new System.EventHandler(this.mnuRelatorioCliente_Click);
+            // 
+            // mnuRelatorioVeiculo
+            // 
+            this.mnuRelatorioVeiculo.Name = "mnuRelatorioVeiculo";
+            this.mnuRelatorioVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuRelatorioVeiculo.Text = "Veículos";
+            // 
+            // mnuRelatorioMotorista
+            // 
+            this.mnuRelatorioMotorista.Name = "mnuRelatorioMotorista";
+            this.mnuRelatorioMotorista.Size = new System.Drawing.Size(180, 22);
+            this.mnuRelatorioMotorista.Text = "Motoristas";
+            // 
+            // mnuRelatorioOleoDiesel
+            // 
+            this.mnuRelatorioOleoDiesel.Name = "mnuRelatorioOleoDiesel";
+            this.mnuRelatorioOleoDiesel.Size = new System.Drawing.Size(180, 22);
+            this.mnuRelatorioOleoDiesel.Text = "Óleo Diesel";
+            // 
+            // mnuRelatorioPedagio
+            // 
+            this.mnuRelatorioPedagio.Name = "mnuRelatorioPedagio";
+            this.mnuRelatorioPedagio.Size = new System.Drawing.Size(180, 22);
+            this.mnuRelatorioPedagio.Text = "Pedagio";
+            // 
             // mnuSair
             // 
             this.mnuSair.Name = "mnuSair";
-            this.mnuSair.Size = new System.Drawing.Size(93, 22);
+            this.mnuSair.Size = new System.Drawing.Size(180, 22);
             this.mnuSair.Text = "Sair";
             this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
             // 
@@ -109,19 +159,19 @@ namespace SGT_VS2019
             this.contratosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.contratosToolStripMenuItem.Text = "Contratos";
             // 
-            // mnucontratosCadastrados
-            // 
-            this.mnucontratosCadastrados.Name = "mnucontratosCadastrados";
-            this.mnucontratosCadastrados.Size = new System.Drawing.Size(194, 22);
-            this.mnucontratosCadastrados.Text = "Contratos Cadastrados";
-            this.mnucontratosCadastrados.Click += new System.EventHandler(this.mnucontratosCadastrados_Click);
-            // 
             // mnuNovoContrato
             // 
             this.mnuNovoContrato.Name = "mnuNovoContrato";
             this.mnuNovoContrato.Size = new System.Drawing.Size(194, 22);
             this.mnuNovoContrato.Text = "Novo Contrato";
             this.mnuNovoContrato.Click += new System.EventHandler(this.mnuNovoContrato_Click);
+            // 
+            // mnucontratosCadastrados
+            // 
+            this.mnucontratosCadastrados.Name = "mnucontratosCadastrados";
+            this.mnucontratosCadastrados.Size = new System.Drawing.Size(194, 22);
+            this.mnucontratosCadastrados.Text = "Contratos Cadastrados";
+            this.mnucontratosCadastrados.Click += new System.EventHandler(this.mnucontratosCadastrados_Click);
             // 
             // Form1
             // 
@@ -152,6 +202,12 @@ namespace SGT_VS2019
         private System.Windows.Forms.ToolStripMenuItem mnucontratosCadastrados;
         private System.Windows.Forms.ToolStripMenuItem mnuSair;
         private System.Windows.Forms.ToolStripMenuItem mnuNovoContrato;
+        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorioCliente;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorioVeiculo;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorioMotorista;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorioOleoDiesel;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorioPedagio;
     }
 }
 

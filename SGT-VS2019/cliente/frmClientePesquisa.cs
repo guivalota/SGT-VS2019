@@ -15,6 +15,8 @@ namespace SGT_VS2019.cliente
     public partial class frmClientePesquisa : Form
     {
         private int selectedRow = -1;
+        public bool selecionaCliente = false;
+        public Cliente clienseSelecionado = null;
         public frmClientePesquisa()
         {
             InitializeComponent();
@@ -217,6 +219,41 @@ namespace SGT_VS2019.cliente
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void SelecionaCliente()
+        {
+            if (selecionaCliente)
+            {
+                pnlBotoes.Enabled = false;
+            }
+        }
+
+        private void Grid_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (selecionaCliente)
+            {
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    ClienteBLL oBLL = new ClienteBLL();
+                    clienseSelecionado = oBLL.PesquisarClientesId(int.Parse(Grid.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                    this.Dispose();
+                }
+            }
         }
     }
 }

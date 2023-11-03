@@ -34,14 +34,14 @@ namespace SGT_VS2019.cliente
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblQtdRegistros = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grid
@@ -62,6 +62,8 @@ namespace SGT_VS2019.cliente
             this.Grid.Size = new System.Drawing.Size(776, 170);
             this.Grid.TabIndex = 0;
             this.Grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellClick);
+            this.Grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellDoubleClick);
+            this.Grid.DoubleClick += new System.EventHandler(this.Grid_DoubleClick);
             // 
             // label1
             // 
@@ -101,18 +103,18 @@ namespace SGT_VS2019.cliente
             this.lblQtdRegistros.TabIndex = 4;
             this.lblQtdRegistros.Text = "label2";
             // 
-            // panel1
+            // pnlBotoes
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel1.Controls.Add(this.btnFechar);
-            this.panel1.Controls.Add(this.btnDeletar);
-            this.panel1.Controls.Add(this.btnConsultar);
-            this.panel1.Controls.Add(this.btnAlterar);
-            this.panel1.Controls.Add(this.btnNovo);
-            this.panel1.Location = new System.Drawing.Point(212, 211);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 35);
-            this.panel1.TabIndex = 5;
+            this.pnlBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pnlBotoes.Controls.Add(this.btnFechar);
+            this.pnlBotoes.Controls.Add(this.btnDeletar);
+            this.pnlBotoes.Controls.Add(this.btnConsultar);
+            this.pnlBotoes.Controls.Add(this.btnAlterar);
+            this.pnlBotoes.Controls.Add(this.btnNovo);
+            this.pnlBotoes.Location = new System.Drawing.Point(212, 211);
+            this.pnlBotoes.Name = "pnlBotoes";
+            this.pnlBotoes.Size = new System.Drawing.Size(410, 35);
+            this.pnlBotoes.TabIndex = 5;
             // 
             // btnFechar
             // 
@@ -169,7 +171,7 @@ namespace SGT_VS2019.cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 251);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBotoes);
             this.Controls.Add(this.lblQtdRegistros);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNome);
@@ -179,7 +181,7 @@ namespace SGT_VS2019.cliente
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +194,7 @@ namespace SGT_VS2019.cliente
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label lblQtdRegistros;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnConsultar;

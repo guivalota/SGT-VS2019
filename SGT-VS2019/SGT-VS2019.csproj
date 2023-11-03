@@ -34,8 +34,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.3136.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.MySql, Version=9.1.151.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +102,17 @@
     <Compile Include="funcionario\frmFuncionarioPesquisa.Designer.cs">
       <DependentUpon>frmFuncionarioPesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="pauloturDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pauloturDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistema\frmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sistema\frmRelatorio.Designer.cs">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="sistema\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +121,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="veiculo\frmVeiculoPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="veiculo\frmVeiculoPesquisa.Designer.cs">
       <DependentUpon>frmVeiculoPesquisa.cs</DependentUpon>
     </Compile>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="cliente\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +166,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sistema\frmRelatorio.resx">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sistema\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +178,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="sistema\relatorios\rltCliente.rdlc" />
     <EmbeddedResource Include="veiculo\frmVeiculoPesquisa.resx">
       <DependentUpon>frmVeiculoPesquisa.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +202,58 @@
     <None Include="Content\fonts\fontawesome-webfont.woff2" />
     <None Include="Content\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="pauloturDataSet.xsc">
+      <DependentUpon>pauloturDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pauloturDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pauloturDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pauloturDataSet.xss">
+      <DependentUpon>pauloturDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Devart.Common.DbConnectionBase.datasource" />
+    <None Include="Properties\DataSources\Devart.Common.DbStatementExecuteEventArgs.datasource" />
+    <None Include="Properties\DataSources\Devart.Common.DisplayNameAttribute.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.ClientLibraryLoadException.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.InvalidCharsetException.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlBinaryString.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlBlob.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlCommand.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlConnection.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlDataAdapter.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlDataReader.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlDataSourceEnumerator.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlDbProviderException.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlDecimal.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlErrorEventArgs.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlErrorEventHandler.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlException.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlGuid.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlHelper.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlMetaDataCollectionNames.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlParameter.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlParameterCollection.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlProviderFactory.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlSchemaTableColumn.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlText.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlTransaction.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.MySqlUtils.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.OldCompatibility.datasource" />
+    <None Include="Properties\DataSources\Devart.Data.MySql.ProductInfo.datasource" />
+    <None Include="Properties\DataSources\Model.Cliente.datasource" />
+    <None Include="Properties\DataSources\Model.Contrato.datasource" />
+    <None Include="Properties\DataSources\Model.Funcionario.datasource" />
+    <None Include="Properties\DataSources\Model.Veiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,6 +281,9 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

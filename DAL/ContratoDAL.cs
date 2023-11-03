@@ -57,6 +57,7 @@ namespace DAL
             if (!campo.Equals("")){
                 sql += " WHERE " + campo + " = " + id;
             }
+            sql += " ORDER BY c.DATACONTRATO DESC";
             try
             {
                 using (var conn = DAL.GetConnection())

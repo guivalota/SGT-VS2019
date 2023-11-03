@@ -30,7 +30,7 @@ namespace SGT_VS2019.contrato
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.frmLocatario = new System.Windows.Forms.TextBox();
+            this.txtLocatario = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,17 +46,17 @@ namespace SGT_VS2019.contrato
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dtpDataInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataFim = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraInicial = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraFinal = new System.Windows.Forms.DateTimePicker();
+            this.txtDiarias = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.dtpDataContrato = new System.Windows.Forms.DateTimePicker();
+            this.txtDestino = new System.Windows.Forms.TextBox();
+            this.btnGerarContrato = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,13 +68,14 @@ namespace SGT_VS2019.contrato
             this.label1.TabIndex = 0;
             this.label1.Text = "Locatário:";
             // 
-            // frmLocatario
+            // txtLocatario
             // 
-            this.frmLocatario.Enabled = false;
-            this.frmLocatario.Location = new System.Drawing.Point(72, 22);
-            this.frmLocatario.Name = "frmLocatario";
-            this.frmLocatario.Size = new System.Drawing.Size(373, 20);
-            this.frmLocatario.TabIndex = 1;
+            this.txtLocatario.BackColor = System.Drawing.SystemColors.Window;
+            this.txtLocatario.Enabled = false;
+            this.txtLocatario.Location = new System.Drawing.Point(72, 22);
+            this.txtLocatario.Name = "txtLocatario";
+            this.txtLocatario.Size = new System.Drawing.Size(373, 20);
+            this.txtLocatario.TabIndex = 1;
             // 
             // btnPesquisar
             // 
@@ -84,6 +85,7 @@ namespace SGT_VS2019.contrato
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // label2
             // 
@@ -132,6 +134,7 @@ namespace SGT_VS2019.contrato
             // 
             // cmbEstadoCivil
             // 
+            this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(263, 111);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
@@ -210,110 +213,121 @@ namespace SGT_VS2019.contrato
             this.label12.TabIndex = 16;
             this.label12.Text = "Destino:";
             // 
-            // dateTimePicker1
+            // dtpDataInicio
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 173);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataInicio.Location = new System.Drawing.Point(139, 173);
+            this.dtpDataInicio.Name = "dtpDataInicio";
+            this.dtpDataInicio.Size = new System.Drawing.Size(106, 20);
+            this.dtpDataInicio.TabIndex = 17;
             // 
-            // dateTimePicker2
+            // dtpDataFim
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(420, 173);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(106, 20);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataFim.Location = new System.Drawing.Point(420, 173);
+            this.dtpDataFim.Name = "dtpDataFim";
+            this.dtpDataFim.Size = new System.Drawing.Size(106, 20);
+            this.dtpDataFim.TabIndex = 18;
             // 
-            // dateTimePicker3
+            // dtpHoraInicial
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(81, 228);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(74, 20);
-            this.dateTimePicker3.TabIndex = 19;
+            this.dtpHoraInicial.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraInicial.Location = new System.Drawing.Point(81, 228);
+            this.dtpHoraInicial.Name = "dtpHoraInicial";
+            this.dtpHoraInicial.Size = new System.Drawing.Size(74, 20);
+            this.dtpHoraInicial.TabIndex = 19;
             // 
-            // dateTimePicker4
+            // dtpHoraFinal
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(368, 228);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(74, 20);
-            this.dateTimePicker4.TabIndex = 20;
+            this.dtpHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraFinal.Location = new System.Drawing.Point(368, 228);
+            this.dtpHoraFinal.Name = "dtpHoraFinal";
+            this.dtpHoraFinal.Size = new System.Drawing.Size(74, 20);
+            this.dtpHoraFinal.TabIndex = 20;
             // 
-            // textBox1
+            // txtDiarias
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 285);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtDiarias.Location = new System.Drawing.Point(55, 285);
+            this.txtDiarias.MaxLength = 2;
+            this.txtDiarias.Name = "txtDiarias";
+            this.txtDiarias.Size = new System.Drawing.Size(47, 20);
+            this.txtDiarias.TabIndex = 21;
+            this.txtDiarias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // textBox2
+            // txtValor
             // 
-            this.textBox2.Location = new System.Drawing.Point(342, 285);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 22;
+            this.txtValor.Location = new System.Drawing.Point(342, 285);
+            this.txtValor.MaxLength = 15;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.TabIndex = 22;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtValor_KeyUp);
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
-            // dateTimePicker5
+            // dtpDataContrato
             // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(108, 342);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(106, 20);
-            this.dateTimePicker5.TabIndex = 23;
+            this.dtpDataContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataContrato.Location = new System.Drawing.Point(108, 342);
+            this.dtpDataContrato.Name = "dtpDataContrato";
+            this.dtpDataContrato.Size = new System.Drawing.Size(106, 20);
+            this.dtpDataContrato.TabIndex = 23;
             // 
-            // textBox3
+            // txtDestino
             // 
-            this.textBox3.Location = new System.Drawing.Point(55, 399);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(471, 20);
-            this.textBox3.TabIndex = 24;
+            this.txtDestino.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDestino.Location = new System.Drawing.Point(55, 399);
+            this.txtDestino.MaxLength = 255;
+            this.txtDestino.Name = "txtDestino";
+            this.txtDestino.Size = new System.Drawing.Size(471, 20);
+            this.txtDestino.TabIndex = 24;
             // 
-            // button1
+            // btnGerarContrato
             // 
-            this.button1.Location = new System.Drawing.Point(65, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Gerar Contrato";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGerarContrato.Location = new System.Drawing.Point(65, 461);
+            this.btnGerarContrato.Name = "btnGerarContrato";
+            this.btnGerarContrato.Size = new System.Drawing.Size(121, 23);
+            this.btnGerarContrato.TabIndex = 25;
+            this.btnGerarContrato.Text = "Gerar Contrato";
+            this.btnGerarContrato.UseVisualStyleBackColor = true;
+            this.btnGerarContrato.Click += new System.EventHandler(this.btnGerarContrato_Click);
             // 
-            // button2
+            // btnLimpar
             // 
-            this.button2.Location = new System.Drawing.Point(228, 461);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Limpar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpar.Location = new System.Drawing.Point(251, 461);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnFechar
             // 
-            this.button3.Location = new System.Drawing.Point(392, 461);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Fechar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFechar.Location = new System.Drawing.Point(392, 461);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.TabIndex = 27;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmNovoContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 516);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker4);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnFechar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnGerarContrato);
+            this.Controls.Add(this.txtDestino);
+            this.Controls.Add(this.dtpDataContrato);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtDiarias);
+            this.Controls.Add(this.dtpHoraFinal);
+            this.Controls.Add(this.dtpHoraInicial);
+            this.Controls.Add(this.dtpDataFim);
+            this.Controls.Add(this.dtpDataInicio);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -329,7 +343,7 @@ namespace SGT_VS2019.contrato
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.frmLocatario);
+            this.Controls.Add(this.txtLocatario);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -344,7 +358,7 @@ namespace SGT_VS2019.contrato
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox frmLocatario;
+        private System.Windows.Forms.TextBox txtLocatario;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -360,16 +374,16 @@ namespace SGT_VS2019.contrato
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker dtpDataInicio;
+        private System.Windows.Forms.DateTimePicker dtpDataFim;
+        private System.Windows.Forms.DateTimePicker dtpHoraInicial;
+        private System.Windows.Forms.DateTimePicker dtpHoraFinal;
+        private System.Windows.Forms.TextBox txtDiarias;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.DateTimePicker dtpDataContrato;
+        private System.Windows.Forms.TextBox txtDestino;
+        private System.Windows.Forms.Button btnGerarContrato;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

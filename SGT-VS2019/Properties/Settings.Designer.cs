@@ -22,5 +22,15 @@ namespace SGT_VS2019.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id=root;Host=localhost;Database=paulotur;Persist Security Info=True")]
+        public string pauloturConnectionString {
+            get {
+                return ((string)(this["pauloturConnectionString"]));
+            }
+        }
     }
 }

@@ -37,7 +37,15 @@ namespace SGT_VS2019.contrato
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.btnGastos = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grid
@@ -55,14 +63,15 @@ namespace SGT_VS2019.contrato
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(776, 254);
+            this.Grid.Size = new System.Drawing.Size(957, 338);
             this.Grid.TabIndex = 0;
+            this.Grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellClick);
             // 
             // lblQtdGrid
             // 
             this.lblQtdGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblQtdGrid.AutoSize = true;
-            this.lblQtdGrid.Location = new System.Drawing.Point(12, 343);
+            this.lblQtdGrid.Location = new System.Drawing.Point(12, 430);
             this.lblQtdGrid.Name = "lblQtdGrid";
             this.lblQtdGrid.Size = new System.Drawing.Size(35, 13);
             this.lblQtdGrid.TabIndex = 1;
@@ -133,11 +142,84 @@ namespace SGT_VS2019.contrato
             this.cmbCliente.TabIndex = 7;
             this.cmbCliente.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnFechar);
+            this.groupBox1.Controls.Add(this.btnGastos);
+            this.groupBox1.Controls.Add(this.btnAbrir);
+            this.groupBox1.Controls.Add(this.btnDeletar);
+            this.groupBox1.Controls.Add(this.btnAlterar);
+            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Location = new System.Drawing.Point(195, 430);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(580, 69);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(46, 19);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 0;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(127, 19);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 1;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Location = new System.Drawing.Point(208, 19);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletar.TabIndex = 2;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Location = new System.Drawing.Point(289, 19);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(75, 23);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            // 
+            // btnGastos
+            // 
+            this.btnGastos.Location = new System.Drawing.Point(370, 19);
+            this.btnGastos.Name = "btnGastos";
+            this.btnGastos.Size = new System.Drawing.Size(75, 23);
+            this.btnGastos.TabIndex = 4;
+            this.btnGastos.Text = "Gastos";
+            this.btnGastos.UseVisualStyleBackColor = true;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(451, 19);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // frmContratosCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 365);
+            this.ClientSize = new System.Drawing.Size(981, 511);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.rdbTodos);
             this.Controls.Add(this.rdbCliente);
@@ -150,6 +232,7 @@ namespace SGT_VS2019.contrato
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contratos Cadastrados";
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +248,12 @@ namespace SGT_VS2019.contrato
         private System.Windows.Forms.RadioButton rdbCliente;
         private System.Windows.Forms.RadioButton rdbTodos;
         private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnGastos;
+        private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnNovo;
     }
 }
