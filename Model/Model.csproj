@@ -69,6 +69,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Contrato.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="Logradouro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

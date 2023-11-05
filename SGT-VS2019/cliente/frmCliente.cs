@@ -186,5 +186,38 @@ namespace SGT_VS2019.cliente
         {
             ValidaCampos();
         }
+
+        private void PesquisarCep()
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                string cep = txtCep.Text.Replace("-","");
+                if(cep != "")
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(cep);
+                    txtEndereco.Text = resposta.end.ToUpper();
+                    cmbUf.SelectedItem = resposta.uf.ToUpper();
+                    txtBairro.Text = resposta.bairro.ToUpper();
+                    txtCidade.Text = resposta.cidade.ToUpper();
+                    txtComplemento.Text = resposta.complemento2.ToUpper();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            PesquisarCep();
+        }
     }
 }

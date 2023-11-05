@@ -39,15 +39,16 @@ namespace SGT_VS2019.sistema
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reporViewer.Location = new System.Drawing.Point(-1, -3);
             this.reporViewer.Name = "reporViewer";
+            this.reporViewer.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual;
             this.reporViewer.ServerReport.BearerToken = null;
-            this.reporViewer.Size = new System.Drawing.Size(799, 450);
+            this.reporViewer.Size = new System.Drawing.Size(881, 592);
             this.reporViewer.TabIndex = 0;
             // 
             // frmRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(882, 589);
             this.Controls.Add(this.reporViewer);
             this.Name = "frmRelatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

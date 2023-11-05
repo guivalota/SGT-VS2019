@@ -93,10 +93,12 @@ namespace SGT_VS2019.cliente
             // rdbJuridica
             // 
             this.rdbJuridica.AutoSize = true;
+            this.rdbJuridica.Checked = true;
             this.rdbJuridica.Location = new System.Drawing.Point(139, 25);
             this.rdbJuridica.Name = "rdbJuridica";
             this.rdbJuridica.Size = new System.Drawing.Size(61, 17);
             this.rdbJuridica.TabIndex = 2;
+            this.rdbJuridica.TabStop = true;
             this.rdbJuridica.Text = "Juridica";
             this.rdbJuridica.UseVisualStyleBackColor = true;
             this.rdbJuridica.CheckedChanged += new System.EventHandler(this.rdbJuridica_CheckedChanged);
@@ -104,12 +106,10 @@ namespace SGT_VS2019.cliente
             // rdbFisica
             // 
             this.rdbFisica.AutoSize = true;
-            this.rdbFisica.Checked = true;
             this.rdbFisica.Location = new System.Drawing.Point(81, 25);
             this.rdbFisica.Name = "rdbFisica";
             this.rdbFisica.Size = new System.Drawing.Size(52, 17);
             this.rdbFisica.TabIndex = 1;
-            this.rdbFisica.TabStop = true;
             this.rdbFisica.Text = "Fisica";
             this.rdbFisica.UseVisualStyleBackColor = true;
             // 
@@ -141,28 +141,36 @@ namespace SGT_VS2019.cliente
             // 
             // txtDocumento
             // 
+            this.txtDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDocumento.Location = new System.Drawing.Point(366, 81);
+            this.txtDocumento.MaxLength = 255;
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(151, 20);
             this.txtDocumento.TabIndex = 7;
             // 
             // txtCpf
             // 
+            this.txtCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCpf.Location = new System.Drawing.Point(53, 81);
+            this.txtCpf.MaxLength = 255;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(163, 20);
             this.txtCpf.TabIndex = 6;
             // 
             // txtNomeFantasia
             // 
+            this.txtNomeFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeFantasia.Location = new System.Drawing.Point(97, 57);
+            this.txtNomeFantasia.MaxLength = 255;
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(420, 20);
             this.txtNomeFantasia.TabIndex = 5;
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Location = new System.Drawing.Point(81, 31);
+            this.txtNome.MaxLength = 255;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(436, 20);
             this.txtNome.TabIndex = 4;
@@ -226,35 +234,72 @@ namespace SGT_VS2019.cliente
             // 
             // txtCidade
             // 
+            this.txtCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCidade.Location = new System.Drawing.Point(55, 109);
+            this.txtCidade.MaxLength = 255;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(462, 20);
             this.txtCidade.TabIndex = 11;
             // 
             // txtComplemento
             // 
+            this.txtComplemento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtComplemento.Location = new System.Drawing.Point(348, 81);
+            this.txtComplemento.MaxLength = 255;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(169, 20);
             this.txtComplemento.TabIndex = 10;
             // 
             // txtBairro
             // 
+            this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairro.Location = new System.Drawing.Point(39, 81);
+            this.txtBairro.MaxLength = 255;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(223, 20);
             this.txtBairro.TabIndex = 9;
             // 
             // txtEndereco
             // 
+            this.txtEndereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEndereco.Location = new System.Drawing.Point(69, 56);
+            this.txtEndereco.MaxLength = 255;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(448, 20);
             this.txtEndereco.TabIndex = 8;
             // 
             // cmbUf
             // 
+            this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUf.FormattingEnabled = true;
+            this.cmbUf.Items.AddRange(new object[] {
+            "RO",
+            "AC",
+            "AM",
+            "RR",
+            "PA",
+            "AP",
+            "TO",
+            "MA",
+            "PI",
+            "CE",
+            "RN",
+            "PB",
+            "PE",
+            "AL",
+            "SE",
+            "BA",
+            "MG",
+            "ES",
+            "RJ",
+            "SP",
+            "PR",
+            "SC",
+            "RS",
+            "MS",
+            "MT",
+            "GO",
+            "DF"});
             this.cmbUf.Location = new System.Drawing.Point(175, 25);
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(49, 21);
@@ -263,9 +308,11 @@ namespace SGT_VS2019.cliente
             // txtCep
             // 
             this.txtCep.Location = new System.Drawing.Point(39, 25);
+            this.txtCep.MaxLength = 255;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(100, 20);
             this.txtCep.TabIndex = 6;
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
             // label7
             // 
@@ -345,6 +392,7 @@ namespace SGT_VS2019.cliente
             // txtTelefone4
             // 
             this.txtTelefone4.Location = new System.Drawing.Point(366, 108);
+            this.txtTelefone4.MaxLength = 255;
             this.txtTelefone4.Name = "txtTelefone4";
             this.txtTelefone4.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone4.TabIndex = 11;
@@ -361,6 +409,7 @@ namespace SGT_VS2019.cliente
             // txtTelefone3
             // 
             this.txtTelefone3.Location = new System.Drawing.Point(162, 108);
+            this.txtTelefone3.MaxLength = 255;
             this.txtTelefone3.Name = "txtTelefone3";
             this.txtTelefone3.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone3.TabIndex = 9;
@@ -377,6 +426,7 @@ namespace SGT_VS2019.cliente
             // txtTelefone2
             // 
             this.txtTelefone2.Location = new System.Drawing.Point(366, 82);
+            this.txtTelefone2.MaxLength = 255;
             this.txtTelefone2.Name = "txtTelefone2";
             this.txtTelefone2.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone2.TabIndex = 7;
@@ -393,6 +443,7 @@ namespace SGT_VS2019.cliente
             // txtTelefone1
             // 
             this.txtTelefone1.Location = new System.Drawing.Point(162, 82);
+            this.txtTelefone1.MaxLength = 255;
             this.txtTelefone1.Name = "txtTelefone1";
             this.txtTelefone1.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone1.TabIndex = 5;
@@ -409,6 +460,7 @@ namespace SGT_VS2019.cliente
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(39, 51);
+            this.txtEmail.MaxLength = 255;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(478, 20);
             this.txtEmail.TabIndex = 3;
@@ -416,6 +468,7 @@ namespace SGT_VS2019.cliente
             // txtHomePage
             // 
             this.txtHomePage.Location = new System.Drawing.Point(78, 25);
+            this.txtHomePage.MaxLength = 255;
             this.txtHomePage.Name = "txtHomePage";
             this.txtHomePage.Size = new System.Drawing.Size(439, 20);
             this.txtHomePage.TabIndex = 2;
