@@ -57,6 +57,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -114,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pauloturDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="pauloturDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pauloturDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sistema\frmRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +136,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sistema\relatorios\frmRelatorioMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sistema\relatorios\frmRelatorioMotorista.Designer.cs">
+      <DependentUpon>frmRelatorioMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sistema\relatorios\frmRelatorioOleoDiesel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sistema\relatorios\frmRelatorioOleoDiesel.Designer.cs">
+      <DependentUpon>frmRelatorioOleoDiesel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="veiculo\frmVeiculoPesquisa.cs">
       <SubType>Form</SubType>
@@ -191,7 +211,16 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="sistema\relatorios\frmRelatorioMotorista.resx">
+      <DependentUpon>frmRelatorioMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sistema\relatorios\frmRelatorioOleoDiesel.resx">
+      <DependentUpon>frmRelatorioOleoDiesel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sistema\relatorios\contratoLocacao1.rdlc" />
     <EmbeddedResource Include="sistema\relatorios\rltCliente.rdlc" />
+    <EmbeddedResource Include="sistema\relatorios\rltMotorista.rdlc" />
+    <EmbeddedResource Include="sistema\relatorios\rltOleoDiesel.rdlc" />
     <EmbeddedResource Include="veiculo\frmVeiculoPesquisa.resx">
       <DependentUpon>frmVeiculoPesquisa.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +421,17 @@
     <None Include="pauloturDataSet.xss">
       <DependentUpon>pauloturDataSet.xsd</DependentUpon>
     </None>
+    <None Include="pauloturDataSet1.xsc">
+      <DependentUpon>pauloturDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pauloturDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pauloturDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pauloturDataSet1.xss">
+      <DependentUpon>pauloturDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Devart.Common.DbConnectionBase.datasource" />
     <None Include="Properties\DataSources\Devart.Common.DbStatementExecuteEventArgs.datasource" />
     <None Include="Properties\DataSources\Devart.Common.DisplayNameAttribute.datasource" />
@@ -432,6 +472,8 @@
     <None Include="Properties\DataSources\Model.Cliente.datasource" />
     <None Include="Properties\DataSources\Model.Contrato.datasource" />
     <None Include="Properties\DataSources\Model.Funcionario.datasource" />
+    <None Include="Properties\DataSources\Model.Relatorios.rltMotorista.datasource" />
+    <None Include="Properties\DataSources\Model.Relatorios.rltOleoDiesel.datasource" />
     <None Include="Properties\DataSources\Model.Veiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -84,6 +84,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RelatorioBLL.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VeiculoBLL.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

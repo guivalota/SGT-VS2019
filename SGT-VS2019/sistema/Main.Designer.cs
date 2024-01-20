@@ -93,18 +93,21 @@ namespace SGT_VS2019
             this.mnuRelatorioVeiculo.Name = "mnuRelatorioVeiculo";
             this.mnuRelatorioVeiculo.Size = new System.Drawing.Size(180, 22);
             this.mnuRelatorioVeiculo.Text = "Veículos";
+            this.mnuRelatorioVeiculo.Click += new System.EventHandler(this.mnuRelatorioVeiculo_Click);
             // 
             // mnuRelatorioMotorista
             // 
             this.mnuRelatorioMotorista.Name = "mnuRelatorioMotorista";
             this.mnuRelatorioMotorista.Size = new System.Drawing.Size(180, 22);
             this.mnuRelatorioMotorista.Text = "Motoristas";
+            this.mnuRelatorioMotorista.Click += new System.EventHandler(this.mnuRelatorioMotorista_Click);
             // 
             // mnuRelatorioOleoDiesel
             // 
             this.mnuRelatorioOleoDiesel.Name = "mnuRelatorioOleoDiesel";
             this.mnuRelatorioOleoDiesel.Size = new System.Drawing.Size(180, 22);
             this.mnuRelatorioOleoDiesel.Text = "Óleo Diesel";
+            this.mnuRelatorioOleoDiesel.Click += new System.EventHandler(this.mnuRelatorioOleoDiesel_Click);
             // 
             // mnuRelatorioPedagio
             // 

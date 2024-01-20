@@ -10,22 +10,25 @@ namespace BLL
 {
     public class FuncionarioBLL
     {
+        FuncionarioDAL oDAL = new FuncionarioDAL();
         public DataSet PesquisarFuncionarios()
         {
-            FuncionarioDAL oDAL = new FuncionarioDAL();
             return oDAL.PesquisarFuncionarios();
         }
 
         public DataSet PesquisarFuncionarioNome(string nome)
         {
-            FuncionarioDAL oDAL = new FuncionarioDAL();
             return oDAL.PesquisarFuncionarioNome(nome);
         }
 
         public List<Funcionario> PesquisarFuncionarioNomeList(String nome, String tipoPesquisa)
         {
-            FuncionarioDAL oDAL = new FuncionarioDAL();
             return oDAL.PesquisarFuncionarioNomeList(nome, tipoPesquisa);
+        }
+
+        public Funcionario PesquisarFuncionarioId(int idFuncionario)
+        {
+            return oDAL.PesquisarFuncionarioId(idFuncionario);
         }
     }
 }

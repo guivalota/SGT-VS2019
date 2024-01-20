@@ -40,6 +40,7 @@ namespace DAL
             return geralDAL.PegarDataSet(sql);
         }
 
+
         public DataSet PesquisarClientes()
         {
             GeralDAL geralDAL = new GeralDAL();

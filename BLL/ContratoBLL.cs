@@ -40,6 +40,7 @@ namespace BLL
             return DAL.ListarVeiculos();
         }
 
+
         public List<Contrato> PesquisarContratoList(string arg, int id)
         {
             ContratoDAL DAL = new ContratoDAL();

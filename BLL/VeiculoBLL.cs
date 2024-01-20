@@ -11,21 +11,23 @@ namespace BLL
 {
     public class VeiculoBLL
     {
+        VeiculoDAL oDAL = new VeiculoDAL();
         public DataSet PesquisarVeiculos()
         {
-            VeiculoDAL oDAL = new VeiculoDAL();
             return oDAL.PesquisarVeiculos();
         }
 
         public DataSet PesquisarVeiculos(string nome)
         {
-            VeiculoDAL oDAL = new VeiculoDAL();
             return oDAL.PesquisarVeiculos(nome);
         }
         public List<Veiculo> PesquisarVeiculosList(string campo, string pesquisa, string status)
         {
-            VeiculoDAL oDAL = new VeiculoDAL();
             return oDAL.PesquisarVeiculosList(campo, pesquisa, status);
+        }
+        public Veiculo PesquisarVeiculoCodigoInterno(string pesquisa)
+        {
+            return oDAL.PesquisarVeiculoCodigoInterno(pesquisa);
         }
     }
 }

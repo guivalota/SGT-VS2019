@@ -108,6 +108,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RelatorioDAL.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VeiculoDAL.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
